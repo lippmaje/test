@@ -24,8 +24,7 @@ jobs:
                   {
                     "regexp": "^([\\s\\S]*)",
                     "message": 1,
-                    "repeatMessage": true,
-                    "loop": true
+                    "repeatMessage": true
                   }
                 ]
               }
