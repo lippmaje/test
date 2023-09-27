@@ -1,0 +1,51 @@
+name: problem_matcher_test
+
+on: workflow_dispatch
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Add problem matcher
+      env:
+        PROBLEM_MATCHER_CONFIG: |
+          {
+            "problemMatcher": [
+              {
+                "owner": "xunit",
+                "pattern": [
+                  {
+                    "regexp": "^\\s*Failed\\s(.*)$",
+                    "message": 1
+                  },
+                  {
+                    "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
+                    "file": 2,
+                    "fromPath": 2,
+                    "line": 3
+                  }
+                ]
+              }
+            ]
+          }
+      run: |
+        echo "$PROBLEM_MATCHER_CONFIG" > xunit.json
+        echo "$PWD/xunit.json"
+        cat -n "$PWD/xunit.json"
+        echo "::add-matcher::$PWD/xunit.json"
+    - name: Dumping Logs
+      env:
+        LOGS: |
+          Failed Library.Tests.UnitTest1.DeliberateFail1 [< 1 ms]
+            at Library.Tests.UnitTest1.DeliberateFail1() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 1
+          Failed Library.Tests.UnitTest1.DeliberateFail2 [< 1 ms]
+            at Library.Tests.UnitTest1.DeliberateFail2() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 2
+      run: |
+        echo "$LOGS"
+    - name: Remove problem matcher
+      run: |
+        echo "::remove-matcher::$PWD/xunit.json"
