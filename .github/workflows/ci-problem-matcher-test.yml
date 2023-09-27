@@ -27,6 +27,7 @@ jobs:
                     "file": 2,
                     "fromPath": 2,
                     "line": 3
+                    "loop": true
                   }
                 ]
               }
