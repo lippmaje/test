@@ -23,11 +23,15 @@ jobs:
                     "message": 1
                   },
                   {
+                    "regexp": "^(.*)$",
+                    "message": 1,
+                    "loop": true
+                  },
+                  {
                     "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
                     "file": 2,
                     "fromPath": 2,
-                    "line": 3,
-                    "loop": true
+                    "line": 3
                   }
                 ]
               }
@@ -46,7 +50,10 @@ jobs:
           Failed Library.Tests.UnitTest1.DeliberateFail2 [< 1 ms]
             at Library.Tests.UnitTest1.DeliberateFail2() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 2
           Failed Library.Tests.UnitTest1.DeliberateFail3 [< 1 ms]
-            at Library.Tests.UnitTest1.DeliberateFail2() in /home/runner/work/Library/Library.Tests/UnitTest1.cs:line 30
+          Error Message:
+          System.Exception : Error message
+          Stack Trace:
+            at Library.Tests.UnitTest1.DeliberateFail3() in /home/runner/work/Library/Library.Tests/UnitTest1.cs:line 30
             at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
             at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
       run: |
