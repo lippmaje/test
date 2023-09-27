@@ -19,7 +19,7 @@ jobs:
                 "owner": "xunit",
                 "pattern": [
                   {
-                    "regexp": "^\\s*Failed\\s(.*)$",
+                    "regexp": "^\\s*Failed\\s([\s\S]*)",
                     "message": 1
                   },
                   {
