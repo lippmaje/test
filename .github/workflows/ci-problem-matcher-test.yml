@@ -22,7 +22,7 @@ jobs:
                     "regexp": "^\\s*Failed\\s([\\s\\S]*)"
                   },
                   {
-                    "regexp": "^(.*)$",
+                    "regexp": "^([\\s\\S]*)",
                     "message": 1,
                     "loop": true
                   }
