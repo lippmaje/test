@@ -26,7 +26,8 @@ jobs:
                     "regexp": "^\\s*Error Message:\\s*$"
                   },
                   {
-                    "regexp": "^\\s*(.*)\\s*$"
+                    "regexp": "^\\s*(.*)\\s*$",
+                    "message": 1,
                   },
                   {
                     "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
