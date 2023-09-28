@@ -19,9 +19,6 @@ jobs:
                 "owner": "xunit",
                 "pattern": [
                   {
-                    "regexp": "Error Message"
-                  },
-                  {
                     "regexp": "^\\s*(.*Exception.*)",
                     "message": 1,
                   },
