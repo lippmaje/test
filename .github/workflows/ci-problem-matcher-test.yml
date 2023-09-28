@@ -25,7 +25,7 @@ jobs:
                     "regexp": "^\\s*Error Message:\\s*$"
                   },
                   {
-                    "regexp": "^\\s*([^a].*)\\s*$",
+                    "regexp": "^\\s*(2.*)\\s*$",
                     "message": 1,
                   },
                   {
