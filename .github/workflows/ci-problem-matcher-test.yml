@@ -19,12 +19,17 @@ jobs:
                 "owner": "xunit",
                 "pattern": [
                   {
-                    "regexp": "^\\s*Failed\\s([\\s\\S]*)"
+                    "regexp": "Error Message"
                   },
                   {
-                    "regexp": "^([\\s\\S]*)",
+                    "regexp": "^\\s*(.*Exception.*)",
                     "message": 1,
-                    "repeatMessage": true
+                  },
+                  {
+                    "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
+                    "file": 2,
+                    "fromPath": 2,
+                    "line": 3
                   }
                 ]
               }
@@ -38,17 +43,24 @@ jobs:
     - name: Dumping Logs
       env:
         LOGS: |
-          Failed Library.Tests.UnitTest1.DeliberateFail1 [< 1 ms]
-            at Library.Tests.UnitTest1.DeliberateFail1() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 1
-          Failed Library.Tests.UnitTest1.DeliberateFail2 [< 1 ms]
-            at Library.Tests.UnitTest1.DeliberateFail2() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 2
-          Failed Library.Tests.UnitTest1.DeliberateFail3 [< 1 ms]
+          Failed Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse [2 ms]
           Error Message:
-            System.NotImplementedException : Not implemented.
+           System.NotImplementedException : Not implemented.
           Stack Trace:
-            at Library.Tests.UnitTest1.DeliberateFail3() in /home/runner/work/Library/Library.Tests/UnitTest1.cs:line 30
-            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
-            at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+             at Prime.Services.PrimeService.IsPrime(Int32 candidate) in C:\Users\Jens\Documents\Visual Studio 2022\Projects\unit-testing-using-dotnet-test\PrimeService\PrimeService.cs:line 10
+           at Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse() in C:\Users\Jens\Documents\Visual Studio 2022\Projects\unit-testing-using-dotnet-test\PrimeService.Tests\PrimeService_IsPrimeShould.cs:line 12
+           at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+           at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+          Failed Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs2_ReturnTrue [2 ms]
+          Error Message:
+           2 should be prime
+        Expected: True
+        Actual:   False
+          Stack Trace:
+             at Prime.Services.PrimeService.IsPrime(Int32 candidate) in C:\Users\Jens\Documents\Visual Studio 2022\Projects\unit-testing-using-dotnet-test\PrimeService\PrimeService.cs:line 9
+           at Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse() in C:\Users\Jens\Documents\Visual Studio 2022\Projects\unit-testing-using-dotnet-test\PrimeService.Tests\PrimeService_IsPrimeShould.cs:line 12
+           at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+           at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
       run: |
         echo "$LOGS"
     - name: Remove problem matcher
