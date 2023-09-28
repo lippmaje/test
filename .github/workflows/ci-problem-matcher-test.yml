@@ -26,7 +26,7 @@ jobs:
                     "regexp": "^\\s*Error Message:\\s*$"
                   },
                   {
-                    "regexp": "^\\s*Error Message2:\\s*$"
+                    "regexp": "^\\s*(.*)\\s*$"
                   },
                   {
                     "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
@@ -48,7 +48,7 @@ jobs:
         LOGS: |
           Failed Library.Tests.UnitTest1.DeliberateFail1 [< 1 ms]
           Error Message:
-          Error Message2:
+           2 should be prime
             at Library.Tests.UnitTest1.DeliberateFail1() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 1
           Failed Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse [2 ms]
           Error Message:
