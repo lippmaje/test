@@ -54,8 +54,8 @@ jobs:
           Failed Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs2_ReturnTrue [2 ms]
           Error Message:
            2 should be prime
-        Expected: True
-        Actual:   False
+          Expected: True
+          Actual:   False
           Stack Trace:
              at Prime.Services.PrimeService.IsPrime(Int32 candidate) in C:\Users\Jens\Documents\Visual Studio 2022\Projects\unit-testing-using-dotnet-test\PrimeService\PrimeService.cs:line 9
            at Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse() in C:\Users\Jens\Documents\Visual Studio 2022\Projects\unit-testing-using-dotnet-test\PrimeService.Tests\PrimeService_IsPrimeShould.cs:line 12
