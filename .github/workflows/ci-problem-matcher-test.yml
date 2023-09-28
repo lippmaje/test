@@ -44,7 +44,7 @@ jobs:
             at Library.Tests.UnitTest1.DeliberateFail2() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 2
           Failed Library.Tests.UnitTest1.DeliberateFail3 [< 1 ms]
           Error Message:
-          System.Exception : Error message
+            System.NotImplementedException : Not implemented.
           Stack Trace:
             at Library.Tests.UnitTest1.DeliberateFail3() in /home/runner/work/Library/Library.Tests/UnitTest1.cs:line 30
             at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
