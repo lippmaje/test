@@ -20,7 +20,6 @@ jobs:
                 "pattern": [
                   {
                     "regexp": "^\\s*Failed\\s(.*)$",
-                    "message": 1,
                   },
                   {
                     "regexp": "^\\s*Error Message:\\s*$"
