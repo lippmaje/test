@@ -29,6 +29,9 @@ jobs:
                     "message": 1
                   },
                   {
+                    "regexp": "^\\s*Stack Trace:\\s*$"
+                  },
+                  {
                     "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
                     "file": 2,
                     "fromPath": 2,
@@ -49,6 +52,7 @@ jobs:
           Failed Library.Tests.UnitTest1.DeliberateFail1 [< 1 ms]
           Error Message:
            2 should be prime
+          Stack Trace:
             at Library.Tests.UnitTest1.DeliberateFail1() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 1
           Failed Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse [2 ms]
           Error Message:
