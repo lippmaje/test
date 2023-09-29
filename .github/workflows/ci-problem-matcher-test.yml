@@ -29,6 +29,12 @@ jobs:
                     "message": 1
                   },
                   {
+                    "regexp": "^\\s*Expected:"
+                  },
+                  {
+                    "regexp": "^\\s*Actual:"
+                  },
+                  {
                     "regexp": "^\\s*Stack Trace:"
                   },
                   {
@@ -52,6 +58,8 @@ jobs:
           Failed Library.Tests.UnitTest1.DeliberateFail1 [< 1 ms]
           Error Message:
            2 should be prime
+          Expected: True
+          Actual:   False
           Stack Trace:
             at Library.Tests.UnitTest1.DeliberateFail1() in /home/runner/work/Library/Library.Tests/UnitTests.cs:line 1
           Failed Prime.UnitTests.Services.PrimeService_IsPrimeShould.IsPrime_InputIs1_ReturnFalse [2 ms]
