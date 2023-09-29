@@ -44,6 +44,30 @@ jobs:
                     "line": 3
                   }
                 ]
+              },
+              {
+                "owner": "xunit2",
+                "pattern": [
+                  {
+                    "regexp": "^\\s*Failed\\s(.*)$"
+                  },
+                  {
+                    "regexp": "^\\s*Error Message:\\s*$"
+                  },
+                  {
+                    "regexp": "^\\s*(.*Exception.*)\\s*$",
+                    "message": 1
+                  },
+                  {
+                    "regexp": "^\\s*Stack Trace:"
+                  },
+                  {
+                    "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
+                    "file": 2,
+                    "fromPath": 2,
+                    "line": 3
+                  }
+                ]
               }
             ]
           }
