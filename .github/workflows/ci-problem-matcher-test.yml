@@ -25,7 +25,7 @@ jobs:
                     "regexp": "^\\s*Error Message:\\s*$"
                   },
                   {
-                    "regexp": "^\\s*(2.*)\\s*$",
+                    "regexp": "^\\s*(.*?)\\s*$",
                     "message": 1
                   },
                   {
@@ -35,7 +35,7 @@ jobs:
                     "regexp": "^\\s*Actual:"
                   },
                   {
-                    "regexp": "^\\s*Stack Trace:"
+                    "regexp": "^\\s*Stack Trace:\\s*$"
                   },
                   {
                     "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
@@ -59,7 +59,7 @@ jobs:
                     "message": 1
                   },
                   {
-                    "regexp": "^\\s*Stack Trace:"
+                    "regexp": "^\\s*Stack Trace:\\s*$"
                   },
                   {
                     "regexp": "^\\s*at\\s(.*)\\s+in\\s+(.*):line\\s+(\\d+)\\s*$",
