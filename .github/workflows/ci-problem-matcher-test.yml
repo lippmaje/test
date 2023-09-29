@@ -46,7 +46,7 @@ jobs:
                 ]
               },
               {
-                "owner": "xunit",
+                "owner": "xunit.exc",
                 "pattern": [
                   {
                     "regexp": "^\\s*Failed\\s(.*)$"
